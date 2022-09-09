@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VehiculoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:fontFamily="serif"
+                android:inputType="textPersonName"
+                android:text="VEHICULO"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="match_parent"
+                android:layout_height="153dp"
+                app:srcCompat="@drawable/vehiculo" />
+
+            <EditText
+                android:id="@+id/etplaca"
+                android:layout_width="231dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:ems="10"
+                android:fontFamily="serif"
+                android:hint="Placa"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/etmarca"
+                android:layout_width="231dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="-20dp"
+                android:ems="10"
+                android:fontFamily="serif"
+                android:hint="Marca"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/etmodelo"
+                android:layout_width="231dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="20dp"
+                android:ems="10"
+                android:fontFamily="serif"
+                android:hint="Modelo"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/etvalor"
+                android:layout_width="231dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="-20dp"
+                android:layout_marginBottom="20dp"
+                android:ems="10"
+                android:fontFamily="serif"
+                android:hint="Valor"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:textAlignment="center" />
+
+            <CheckBox
+                android:id="@+id/cbactivo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="20dp"
+                android:checked="true"
+                android:enabled="false"
+                android:fontFamily="serif"
+                android:onClick="Anular"
+                android:text="Activo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnguardar2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#ED296C"
+                    android:fontFamily="serif"
+                    android:hyphenationFrequency="normal"
+                    android:onClick="Guardar"
+                    android:text="Guardar"
+                    app:strokeColor="#752727" />
+
+                <Button
+                    android:id="@+id/btnconsultar2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#ED296C"
+                    android:fontFamily="serif"
+                    android:onClick="Consultar"
+                    android:text="Consultar" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnanular2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#ED296C"
+                    android:fontFamily="serif"
+                    android:text="Anular" />
+
+                <Button
+                    android:id="@+id/btncancelar2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#ED296C"
+                    android:fontFamily="serif"
+                    android:text="Cancelar" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnregresar2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#B6144B"
+                android:fontFamily="serif"
+                android:onClick="Regresar"
+                android:text="Regresar" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
