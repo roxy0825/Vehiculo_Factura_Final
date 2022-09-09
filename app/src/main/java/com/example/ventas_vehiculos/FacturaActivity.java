@@ -20,7 +20,7 @@ public class FacturaActivity extends AppCompatActivity {
     ClsOpenHelper admins=new ClsOpenHelper( this, "concensionario.db", null,1);
     String codigo,fecha,placa;
     long resp;
-    int sw;
+    int sw,sw1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,7 @@ public class FacturaActivity extends AppCompatActivity {
         etval=findViewById(R.id.etval);
 
         sw = 0;
+        sw1 = 0;
 
     }
 
@@ -136,11 +137,9 @@ public class FacturaActivity extends AppCompatActivity {
 
     }
     public void AnularFactura (View view){
-        if (sw == 0){
-            Toast.makeText(this,"Primero debe consultar", Toast.LENGTH_SHORT).show();
-            jetplaca.requestFocus();
-        }
-        else {
+
+
+
             SQLiteDatabase database=admins.getWritableDatabase();
             ContentValues registro= new ContentValues();
             registro.put("activo","no");
@@ -152,7 +151,7 @@ public class FacturaActivity extends AppCompatActivity {
             else
                 Toast.makeText(this, "Error anulado registro", Toast.LENGTH_SHORT).show();
             database.close();
-        }
+
     }
     public void Cancelar (View view){
         limpiar_campos();
@@ -164,6 +163,35 @@ public class FacturaActivity extends AppCompatActivity {
         jbcactivo2.setChecked(true);
 
         sw= 0;
+    }
+
+    public void Consultar (View view){
+        codigo=jetcodigo.getText().toString();
+        if (codigo.isEmpty()){
+            Toast.makeText(this, "El codigo es requerida", Toast.LENGTH_SHORT).show();
+            jetcodigo.requestFocus();
+        }
+        else {
+            SQLiteDatabase database=admins.getReadableDatabase();
+            Cursor fila=database.rawQuery("select * from TblFactura where codigo = '" + codigo+ "'",null);
+            if (fila.moveToNext()){
+                sw1 = 1;
+
+                jetfecha.setText(fila.getString(1));
+                jetplaca.setText(fila.getString(2));
+                if (fila.getString(3).equals("si"))
+                    jbcactivo2.setChecked(true);
+                else
+                    jbcactivo2.setChecked(false);
+
+            }
+            else {
+                Toast.makeText(this, "Vehiculo no registrado", Toast.LENGTH_SHORT).show();
+                database.close();
+            }
+        }
+
+
     }
 
 
